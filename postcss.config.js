@@ -5,4 +5,6 @@ export default {
   },
   // "A PostCSS plugin did not pass the `from` option" 警告を抑制
   from: undefined
+  // "A PostCSS plugin did not pass the `from` option" 警告を抑制
+  from: undefined
 };
