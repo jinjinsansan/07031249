@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Eye, Lock, Database, AlertTriangle, Users, Clock, MessageCircle, Upload, RefreshCw, Download, CheckCircle, User } from 'lucide-react';
+import { Shield, Eye, Lock, Database, AlertTriangle, Users, Clock, MessageCircle, CheckCircle, User } from 'lucide-react';
 import { logSecurityEvent } from '../lib/deviceAuth';
 
 interface PrivacyConsentProps {
@@ -132,11 +132,12 @@ const PrivacyConsent: React.FC<PrivacyConsentProps> = ({ onConsent }) => {
       };
       
       fileReader.readAsText(backupData);
-      setRestoreStatus({message: 'バックアップが正常に作成されました！', success: true});
+      
     } catch (error) {
       console.error('バックアップ復元エラー:', error);
       setRestoreStatus({message: 'バックアップの復元に失敗しました。', success: false});
-      setRestoreStatus({message: 'バックアップの作成に失敗しました。', success: false});
+    } finally {
+      setRestoreLoading(false);
     }
   };
 

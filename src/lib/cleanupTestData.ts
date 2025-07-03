@@ -188,7 +188,7 @@ export const removeDuplicateEntries = async (): Promise<{
     if (supabase) {
       try {
         // 重複を検出して削除するSQL関数を実行
-        const { data, error } = await supabase.rpc('remove_duplicate_diary_entries');
+        const { data, error } = await supabase.rpc('remove_duplicate_entries');
         
         if (error) {
           console.error('Supabase重複削除エラー:', error);

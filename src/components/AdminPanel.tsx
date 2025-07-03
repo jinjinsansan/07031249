@@ -914,7 +914,7 @@ const AdminPanel: React.FC = () => {
                       </p>
                       <button
                         onClick={handleCreateBackup}
-                        className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-jp-medium transition-colors w-full sm:w-auto"
+                        className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-jp-bold transition-colors shadow-md mx-auto text-sm sm:text-base"
                       >
                         <Download className="w-5 h-5" />
                         <span>バックアップを作成</span>

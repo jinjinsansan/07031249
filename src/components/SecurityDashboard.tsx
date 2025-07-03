@@ -81,7 +81,7 @@ const SecurityDashboard: React.FC = () => {
           supabase.from('users').select('id', { count: 'exact' })
         ]).then(([totalResult, activeResult]) => {
           const totalUsers = totalResult.count || 0;
-          const activeUsers = activeResult.count || 0; // 実際には最近のアクティブユーザー数を取得する必要がある
+          const activeCounselors = activeResult.count || 0; // 実際には最近のアクティブユーザー数を取得する必要がある
           
           // セキュリティイベント数を取得
           const events = localStorage.getItem(STORAGE_KEYS.SECURITY_EVENTS);
@@ -91,7 +91,7 @@ const SecurityDashboard: React.FC = () => {
           
           const newMetrics: SecurityMetrics = {
             totalUsers,
-            activeUsers,
+            activeUsers: activeCounselors,
             lockedAccounts: 0, // 実際のロックされたアカウント数
             todayLogins: Math.min(totalUsers, 5), // 仮の値
             failedAttempts: credentials ? getLoginAttempts(credentials.lineUsername) : 0,
@@ -152,18 +152,16 @@ const SecurityDashboard: React.FC = () => {
           id: '1',
           type: 'info',
           title: 'セキュリティシステム初期化',
-          username: 'テストユーザー',
+          message: 'デバイス認証システムが正常に初期化されました',
           timestamp: new Date().toISOString(),
-          details: 'デバイス認証システムが正常に初期化されました',
           resolved: true
         },
         {
           id: '2',
           type: 'warning',
           title: 'ログイン試行失敗',
-          username: 'テストユーザー',
+          message: 'PIN番号の入力に3回失敗しました',
           timestamp: new Date(Date.now() - 3600000).toISOString(),
-          details: 'PIN番号の入力に3回失敗しました',
           resolved: false
         }
       ];

@@ -144,7 +144,7 @@ const DataCleanup: React.FC = () => {
               同期エラーが発生している可能性があります。以下のボタンを使用して、データベースを完全にクリーンアップできます。
             </p>
             <div className="bg-white rounded-lg p-4 border border-red-300">
-              <h4 className="font-jp-semibold text-red-900 mb-2">危険な操作</h4>
+              <h4 className="font-jp-bold text-red-900 mb-2">危険な操作</h4>
               <p className="text-red-700 text-sm mb-4">
                 以下の操作は取り消せません。必要な場合のみ実行してください。
               </p>
