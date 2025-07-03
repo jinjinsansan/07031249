@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Eye, Lock, Database, AlertTriangle, Users, Clock, MessageCircle, CheckCircle, User } from 'lucide-react';
+import { Shield, Eye, Lock, Database, AlertTriangle, Users, Clock, MessageCircle, CheckCircle, User, Upload } from 'lucide-react';
 import { logSecurityEvent } from '../lib/deviceAuth';
 
 interface PrivacyConsentProps {
