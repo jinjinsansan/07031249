@@ -292,7 +292,7 @@ export const useAutoSync = (): AutoSyncState => {
               entry.emotion === '達成感' || 
               entry.emotion === '幸せ') {
             
-            // 必ずNULLにならないように数値に変換し、デフォルト値を設定
+            // 必ずNULLにならないように数値型に変換し、デフォルト値を設定
             formattedEntry.self_esteem_score = 
               typeof entry.selfEsteemScore === 'number' ? entry.selfEsteemScore : 
               (typeof entry.selfEsteemScore === 'string' && entry.selfEsteemScore !== '' ? parseInt(entry.selfEsteemScore) : 
